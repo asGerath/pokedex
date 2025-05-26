@@ -1,0 +1,99 @@
+
+.layout__pokemonImg{
+
+    width: 100%;
+    /* height: 25rem; */
+    height: 100%;
+    background-color: var(--gris-pok) ;
+
+
+    overflow: hidden;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 12px;
+
+    & > figure{
+        background-color: var(--blackPoke);
+
+      position: relative;
+      width: 100%;
+      padding: 0 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      border: 2px solid white;
+      border-radius: 12px;
+      overflow: hidden;
+      z-index: 1;
+      & > .sad15xz{
+        position: absolute;
+        z-index: 0;
+        top: -50%;
+        left: -50%;
+        right: -50%;
+        bottom: -50%;
+        width: 200%;
+        height: 200vh;
+        background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+        background-repeat: repeat;
+        /* background-color: var(--blackPoke); */
+        
+        animation: bg-animation .2s infinite;
+        opacity: .9;
+        visibility: visible;
+          }
+        
+    & img {
+      width: 100%;
+      object-fit: contain;
+      image-rendering: pixelated;
+    }
+}
+}
+
+@media screen and (max-width:991px){
+  .layout__pokemonImg{
+    border-bottom: 0;
+    border-radius: 12px 12px 0 0;
+  }
+}
+
+
+@media screen and (max-width:650px){
+  .layout__pokemonImg{
+
+
+    & >figure{
+      width: 100%;
+      padding: 0 1rem;
+    
+      & img {
+      width: 100%;
+      object-fit: contain;
+      image-rendering: pixelated;
+    }
+}
+}
+
+
+}
+
+
+
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}

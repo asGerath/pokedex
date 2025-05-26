@@ -1,0 +1,21 @@
+:root {
+  --red-primary: #DC0A2D;
+  --cian-pok:#02FBFB;
+  --yellow: #FFCC02;
+  --green-pok: #74AC85;
+  --gris-pok: #A0A0A0;
+  --blackPoke:#181B1D;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    margin: 0 auto;
+}
+
+.w-100{
+    width: 100%;
+}

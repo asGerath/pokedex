@@ -1,0 +1,16 @@
+  <main class="layout__main">
+
+    <span class="shape__ball" ></span>
+    
+    <app-picture-pokemon></app-picture-pokemon>
+
+    <div class="main__cards" (scroll)="onScroll($event)">
+      <app-card-pokemon
+        *ngFor="let pokemon of listaPokemon"
+        [data]="pokemon"
+        
+        (clickeado)="cardClickeada($event)"
+      >
+      </app-card-pokemon>
+    </div>
+  </main>

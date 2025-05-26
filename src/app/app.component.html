@@ -1,0 +1,60 @@
+<header class="layout__header">
+  <div class="header__shapes">
+    <div class="header__circle"></div>
+    <div class="header__circle header__red"></div>
+    <div class="header__circle header__yellow"></div>
+    <div class="header__circle header__green"></div>
+  </div>
+
+  <nav class="header__nav">
+    <div class="nav__serch" >
+
+      <div class="serch__content">
+
+        <input
+          type="text"
+          placeholder="Busca tu Pokémon"
+          [(ngModel)]="terminoBusqueda"
+          (input)="buscarPokemon(terminoBusqueda)"
+        />
+        <ul *ngIf="sugerencias.length > 0" class="sugerencias">
+          <li
+            *ngFor="let sugerencia of sugerencias"
+            (click)="seleccionarPokemon(sugerencia.name)"
+          >
+            {{ sugerencia.name }}
+          </li>
+        </ul>
+        <ul *ngIf="pokemonNoEncontrado"  class="sugerencias">
+          <li>
+            El Pokémon no existe
+          </li>
+        </ul>
+      </div>
+  
+    </div>
+
+  </nav>
+
+  <figure class="">
+    <img  src="/PokeBall.webp" alt="Poké Ball" />
+  </figure>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer class="layout__footer">
+  <figure>
+    <img
+      class="w-100"
+      src="https://asgerath.com/assets/as%20original-BDOjO-m8.webp"
+      alt=""
+    />
+  </figure>
+
+  <div>
+    <figure>
+      <img class="w-100" src="/PokeBall.webp" alt="Poké Ball" />
+    </figure>
+  </div>
+</footer>

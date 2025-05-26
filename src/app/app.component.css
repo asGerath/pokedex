@@ -1,0 +1,180 @@
+
+figure {
+  margin: 0;
+}
+.layout__header {
+  height: 100px;
+  background-color: var(--red-primary);
+  padding: 1rem 2rem;
+  /* display: flex;
+  justify-content: space-between; */
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-areas:
+        "pokeShapes pokeBuscador pokeLogo";
+
+  & > .header__shapes {
+        grid-area: pokeShapes;
+
+    display: flex;
+    gap: 1rem;
+    & > .header__circle {
+      background-color: var(--cian-pok);
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999999px;
+      border: 1px solid black;
+    }
+    & > .header__red {
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--red-primary);
+    }
+    & > .header__yellow {
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--yellow);
+    }
+    & > .header__green {
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--green-pok);
+    }
+  }
+
+  & > .header__nav {
+    grid-area: pokeBuscador;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1;
+    gap: 1rem;
+    align-items: center;
+    & >.nav__serch .serch__content{
+        position: relative;
+        & >  input {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: white;
+          background-color: var(--yellow);
+          border-radius: 12px;
+          border: 2px solid black;
+          padding: 0.5rem 1rem;
+            }
+        }
+    }
+
+    & > figure {
+        grid-area: pokeLogo;
+
+        display: flex;
+        justify-content: flex-end;
+        text-align: end;
+        & > img{
+            width: 5rem;
+            object-fit: contain;
+        }
+    }
+}
+
+.layout__footer {
+  width: 100%;
+  padding: 1rem 2rem;
+    height: 100px;
+  background-color: var(--red-primary);
+  display: flex;
+  justify-content: space-between;
+  & > figure {
+    width: 200px;
+  }
+
+  & > div {
+    width: 5rem;
+  }
+}
+
+.sugerencias {
+    position: absolute;
+    width: 100%;
+    top: 2.5rem;
+    z-index: -1;
+    background-color: var(--yellow);
+    color: white;
+    left: 0;
+    padding: 0;
+    padding-top: 1rem;
+    padding-right: 2rem;
+  list-style: none;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 0 0 12px 12px;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  /* &:hover{
+    background-color: var(--cian-pok);
+  } */
+  
+}
+
+
+
+
+.sugerencias li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.sugerencias li:hover {
+  background: #eee;
+}
+
+
+@media screen and (max-width:991px) {
+    .layout__header{
+    
+        & > figure img  {
+            width: 3rem;
+        }
+    }
+}
+
+@media screen and (max-width:650px){
+    .layout__header{
+        height: 128px;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        grid-template-areas:
+        "pokeShapes  pokeLogo"
+        "pokeBuscador pokeBuscador";
+
+        & .header__nav .nav__serch{
+            width: 100%;
+            & input {
+                width: 100%;
+            }
+        }
+        
+        & > figure img  {
+            width: 2rem;
+        }
+    }
+
+
+    .layout__footer {
+  width: 100%;
+  padding: 1rem 2rem;
+    height: 75px;
+  background-color: var(--red-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & > figure {
+    width: 150px;
+  }
+
+  & > div {
+    width: 2rem;
+  }
+}
+
+}

@@ -1,0 +1,14 @@
+<div class="container__img" [ngClass]="{seleccionado:seleccionado}">
+
+
+        <!-- <i style="color: black; font-size: 5rem;" class="fa-solid fa-hand-pointer"></i> -->
+        
+        
+        <div (click)="clickeado.emit(id)">
+            <img class="img--pokeball" src="/PokeBall.webp" alt="">
+            <img class="img--pokemon" [src]="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`" alt="">
+            <span class="img--number">No. {{id}} </span>
+            <span class="img--name" *ngIf="data"> {{data.name | titlecase}} </span>
+        </div>
+
+</div>
