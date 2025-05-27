@@ -1,59 +1,78 @@
-# PokedexTeknei
+# 🧩 Pokédex App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
+Aplicación web construida con **Angular standalone components** y **CSS puro**, sin frameworks externos.  
+Permite buscar, listar y visualizar Pokémon con una interfaz limpia y responsiva.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Requisitos
+
+- Node.js ≥ 18.x
+- Angular CLI ≥ 16.x (opcional pero recomendado)
+
+---
+
+## 🛠 Instalación
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/asGerath/pokedex
+cd tu-repo
+```
+
+2. Instala las dependencias:
+
+```bash
+npm install
+```
+
+---
+
+## ▶️ Ejecutar en modo desarrollo
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Luego abre tu navegador en:  
+[http://localhost:4200](http://localhost:4200)
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📁 Estructura principal
 
-```bash
-ng generate component component-name
+```
+├── src/
+│   ├── app/
+│   │   ├── components/      # Componentes como CardPokemon
+│   │   ├── pages/           # Páginas como HomeComponent
+│   │   ├── app.component.ts # Componente raíz standalone
+│   │   └── app.routes.ts    # Rutas configuradas con provideRouter
+│   ├── assets/              # Imágenes y otros archivos estáticos
+│   └── styles.css           # Estilos globales
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 📦 Tecnologías utilizadas
 
-## Building
+- ✅ Angular standalone (sin módulos tradicionales)
+- ✅ CSS puro (sin Bootstrap, Tailwind ni otros frameworks)
+- ❌ Sin librerías externas
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 📄 Notas
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Las imágenes se encuentran en `public/` y se acceden vía `/img/...`.
+- No se usa `AppModule`, toda la app está construida con componentes `standalone`.
+- Código optimizado para mantener la simplicidad y claridad.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🧑‍💻 Autor
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Joshua Gerath Abarca Sánchez  
+Frontend Developer | Apasionado por el crecimiento profesional  
+🎵 Amante de la música y el baile

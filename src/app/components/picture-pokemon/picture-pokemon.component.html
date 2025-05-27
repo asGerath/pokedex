@@ -1,4 +1,4 @@
-<div class="layout__pokemonImg">
+<!-- <div class="layout__pokemonImg">
   <figure>
     <span class="sad15xz"></span>
     <img 
@@ -6,4 +6,25 @@
       [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemonId + '.png'" 
     />
   </figure>
+</div>
+ -->
+
+<div class="layout__pokemonImg" *ngIf="pokemon">
+
+  <figure>
+    <img 
+      [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemonId + '.png'" 
+      [alt]="pokemon.name"
+    />
+    <div class="pokemon__info">
+      <h2>{{ pokemon.name | titlecase }}</h2>
+      <p><strong>Número:</strong> #{{ pokemonId }}</p>
+      <p><strong>Tipo(s): </strong>{{ tiposTraducidosArray.join(', ') }}</p>
+    </div>
+  </figure>
+
+</div>
+
+<div *ngIf="!pokemon">
+  <p>Cargando...</p>
 </div>

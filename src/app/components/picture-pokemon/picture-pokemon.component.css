@@ -2,22 +2,17 @@
 .layout__pokemonImg{
 
     width: 100%;
-    /* height: 25rem; */
-    height: 100%;
+    height: 500px;
     background-color: var(--gris-pok) ;
-
-
-    overflow: hidden;
     padding: 1rem;
     border: 1px solid black;
     border-radius: 12px;
+    
+    position: relative;
 
     & > figure{
-        background-color: var(--blackPoke);
-
-      position: relative;
+      background-color: var(--blackPoke);
       width: 100%;
-      padding: 0 5rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -29,57 +24,33 @@
       border-radius: 12px;
       overflow: hidden;
       z-index: 1;
-      & > .sad15xz{
-        position: absolute;
-        z-index: 0;
-        top: -50%;
-        left: -50%;
-        right: -50%;
-        bottom: -50%;
-        width: 200%;
-        height: 200vh;
-        background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
-        background-repeat: repeat;
-        /* background-color: var(--blackPoke); */
-        
-        animation: bg-animation .2s infinite;
-        opacity: .9;
-        visibility: visible;
-          }
-        
-    & img {
-      width: 100%;
-      object-fit: contain;
-      image-rendering: pixelated;
-    }
+      & > img {
+        width: 60%;
+        object-fit: contain;
+        image-rendering: pixelated;
+      }
+      & > .pokemon__info {
+        width: fit-content;
+        background-color: var(--gris-pok);
+        font-size: 16px; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 1rem;
+        border-radius: 12px;
+        padding: 1rem;
+        color: white;
+        margin-right: 1rem;
+        & > h2{
+          font-weight: bold;
+          color: var(--);
+        }
+        & strong{
+          color: var(--red-primary);
+        }
+      }
 }
-}
-
-@media screen and (max-width:991px){
-  .layout__pokemonImg{
-    border-bottom: 0;
-    border-radius: 12px 12px 0 0;
-  }
-}
-
-
-@media screen and (max-width:650px){
-  .layout__pokemonImg{
-
-
-    & >figure{
-      width: 100%;
-      padding: 0 1rem;
-    
-      & img {
-      width: 100%;
-      object-fit: contain;
-      image-rendering: pixelated;
-    }
-}
-}
-
-
 }
 
 
@@ -97,3 +68,41 @@
     90% { transform: translate(10%,5%) }
     100% { transform: translate(5%,0) }
 }
+
+@media screen and (max-width:991px){
+  .layout__pokemonImg{
+    border-bottom: 0;
+    border-radius: 12px 12px 0 0;
+    height: 100%;
+  }
+}
+
+
+@media screen and (max-width:650px){
+  .layout__pokemonImg{
+
+
+    & > figure{
+      width: 100%;
+      padding: 0;
+      flex-direction: column;
+      
+      & > .pokemon__info{
+        margin: 0;
+        width: 100%;
+        border-radius: unset;
+        background-color: var(--blackPoke);
+      }
+      & img {
+      width: 100%;
+      object-fit: contain;
+      image-rendering: pixelated;
+
+    }
+}
+}
+
+
+}
+
+
