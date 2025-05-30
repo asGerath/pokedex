@@ -17,6 +17,8 @@ export class PicturePokemonComponent implements OnInit {
   nombre: string = '';
   numero: string = '';
   tipos: string = '';
+  mostrarImagen = true;
+  imgKey = 0;
 
   tiposTraducidos: Record<string, string> = {
   normal: 'Normal',
@@ -46,16 +48,24 @@ export class PicturePokemonComponent implements OnInit {
 
   ngOnInit(): void {
   this.pokemonService.pokemonSeleccionado$.subscribe((id) => {
-    this.pokemonId = id;
-    this.pokemonService.getById(id).then(pokemon => {
-      this.pokemon = pokemon;
+  this.mostrarImagen = false; // Oculta el <img> temporalmente
 
-      // Traducir tipos aquí
-      this.tiposTraducidosArray = pokemon.types.map(t =>
-        this.tiposTraducidos[t.type.name] || t.type.name
-      );
-    });
+  this.pokemonId = id;
+
+  this.pokemonService.getById(id).then(pokemon => {
+    this.pokemon = pokemon;
+    this.tiposTraducidosArray = pokemon.types.map(t =>
+      this.tiposTraducidos[t.type.name] || t.type.name
+    );
+
+    setTimeout(() => {
+      this.imgKey++;
+      this.mostrarImagen = true;
+    }, 50);
   });
+});
+
+
 }
 
 }

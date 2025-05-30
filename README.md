@@ -74,5 +74,3 @@ Luego abre tu navegador en:
 ## 🧑‍💻 Autor
 
 Joshua Gerath Abarca Sánchez  
-Frontend Developer | Apasionado por el crecimiento profesional  
-🎵 Amante de la música y el baile

@@ -24,10 +24,17 @@
       border-radius: 12px;
       overflow: hidden;
       z-index: 1;
-      & > img {
+      & > .pokemon-img {
+        aspect-ratio: 1 / 1;
         width: 60%;
         object-fit: contain;
         image-rendering: pixelated;
+        
+      }
+      & > .pokemon-img.fade{
+        animation: fadeIn 0.5s ease-in-out;
+        transition: opacity 0.5s ease-in-out;
+  opacity: 1;
       }
       & > .pokemon__info {
         width: fit-content;
@@ -51,6 +58,33 @@
         }
       }
 }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    transform: rotate(360deg);
+  }
+  25%{
+    transform: rotate(90deg);
+
+  }
+  50%{
+    transform: rotate(360deg);
+    
+  }
+  75% {
+    transform: rotate(90deg);
+
+  }
+  100% {
+    transform: rotate(360deg);
+
+    opacity: 1;
+    transform: scale(1);
+
+  }
 }
 
 
@@ -81,28 +115,26 @@
 @media screen and (max-width:650px){
   .layout__pokemonImg{
 
-
     & > figure{
       width: 100%;
       padding: 0;
       flex-direction: column;
+      & > img {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        image-rendering: pixelated;
+      }
       
       & > .pokemon__info{
         margin: 0;
         width: 100%;
         border-radius: unset;
         background-color: var(--blackPoke);
+        font-size: 14px;
       }
-      & img {
-      width: 100%;
-      object-fit: contain;
-      image-rendering: pixelated;
-
     }
-}
-}
-
-
+  }
 }
 
 

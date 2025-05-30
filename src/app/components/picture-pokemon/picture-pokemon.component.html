@@ -13,9 +13,12 @@
 
   <figure>
     <img 
-      [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemonId + '.png'" 
-      [alt]="pokemon.name"
-    />
+  *ngIf="mostrarImagen" 
+  [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemonId + '.png'" 
+  [attr.key]="imgKey" 
+  class="pokemon-img fade"
+/>
+
     <div class="pokemon__info">
       <h2>{{ pokemon.name | titlecase }}</h2>
       <p><strong>Número:</strong> #{{ pokemonId }}</p>
